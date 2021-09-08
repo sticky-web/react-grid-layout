@@ -162,25 +162,6 @@ function childrenEqual(a
 )
 /*: boolean*/
 {
-  console.log('isEqual', (0, _lodash.default)(_react.default.Children.map(a, function (c) {
-    console.log({
-      key: c === null || c === void 0 ? void 0 : c.key,
-      props: c.props['data-grid']
-    });
-    return {
-      key: c === null || c === void 0 ? void 0 : c.key,
-      props: c.props['data-grid']
-    };
-  }), _react.default.Children.map(b, function (c) {
-    console.log({
-      key: c === null || c === void 0 ? void 0 : c.key,
-      props: c.props['data-grid']
-    });
-    return {
-      key: c === null || c === void 0 ? void 0 : c.key,
-      props: c.props['data-grid']
-    };
-  })));
   return (0, _lodash.default)(_react.default.Children.map(a, function (c) {
     return {
       key: c === null || c === void 0 ? void 0 : c.key,
@@ -760,8 +741,10 @@ function sortLayoutItemsByColRow(layout
  * Does not modify initialLayout.
  *
  * @param  {Array}  initialLayout Layout passed in through props.
- * @param  {String} breakpoint    Current responsive breakpoint.
- * @param  {?String} compact      Compaction option.
+ * @param children
+ * @param cols
+ * @param compactType
+ * @param allowOverlap
  * @return {Array}                Working layout.
  */
 
@@ -794,7 +777,7 @@ function synchronizeLayoutWithChildren(initialLayout
     var exists = getLayoutItem(initialLayout, String(child.key));
 
     if (exists) {
-      layout.push(cloneLayoutItem(exists));
+      layout.push(cloneLayoutItem(_objectSpread(_objectSpread({}, exists), child.props["data-grid"])));
     } else {
       if (!isProduction && child.props._grid) {
         console.warn("`_grid` properties on children have been deprecated as of React 15.2. " + // eslint-disable-line

@@ -719,7 +719,9 @@ var ReactGridLayout = /*#__PURE__*/function (_React$Component) {
 
 
       if (newLayoutBase) {
+        console.log('newLayout - base', newLayoutBase);
         var newLayout = (0, _utils.synchronizeLayoutWithChildren)(newLayoutBase, nextProps.children, nextProps.cols, (0, _utils.compactType)(nextProps), nextProps.allowOverlap);
+        console.log('newLayout - layout', newLayout);
         return {
           layout: newLayout,
           // We need to save these props to state for using

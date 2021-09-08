@@ -171,6 +171,7 @@ export default class ReactGridLayout extends React.Component<Props, State> {
 
     // We need to regenerate the layout.
     if (newLayoutBase) {
+      console.log('newLayout - base', newLayoutBase)
       const newLayout = synchronizeLayoutWithChildren(
         newLayoutBase,
         nextProps.children,
@@ -178,6 +179,8 @@ export default class ReactGridLayout extends React.Component<Props, State> {
         compactType(nextProps),
         nextProps.allowOverlap
       );
+  
+      console.log('newLayout - layout', newLayout)
 
       return {
         layout: newLayout,
