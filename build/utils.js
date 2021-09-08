@@ -162,6 +162,19 @@ function childrenEqual(a
 )
 /*: boolean*/
 {
+  (0, _lodash.default)(_react.default.Children.map(a, function (c) {
+    console.log({
+      key: c === null || c === void 0 ? void 0 : c.key,
+      props: c.props
+    });
+    return 1;
+  }), _react.default.Children.map(b, function (c) {
+    console.log({
+      key: c === null || c === void 0 ? void 0 : c.key,
+      props: c.props
+    });
+    return 1;
+  }));
   return (0, _lodash.default)(_react.default.Children.map(a, function (c) {
     return {
       key: c === null || c === void 0 ? void 0 : c.key,
