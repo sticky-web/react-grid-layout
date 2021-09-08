@@ -162,28 +162,34 @@ function childrenEqual(a
 )
 /*: boolean*/
 {
-  (0, _lodash.default)(_react.default.Children.map(a, function (c) {
+  console.log('isEqual', (0, _lodash.default)(_react.default.Children.map(a, function (c) {
     console.log({
       key: c === null || c === void 0 ? void 0 : c.key,
-      props: c.props
+      props: c.props['data-grid']
     });
-    return 1;
+    return {
+      key: c === null || c === void 0 ? void 0 : c.key,
+      props: c.props['data-grid']
+    };
   }), _react.default.Children.map(b, function (c) {
     console.log({
       key: c === null || c === void 0 ? void 0 : c.key,
-      props: c.props
+      props: c.props['data-grid']
     });
-    return 1;
-  }));
+    return {
+      key: c === null || c === void 0 ? void 0 : c.key,
+      props: c.props['data-grid']
+    };
+  })));
   return (0, _lodash.default)(_react.default.Children.map(a, function (c) {
     return {
       key: c === null || c === void 0 ? void 0 : c.key,
-      props: c.props
+      props: c.props['data-grid']
     };
   }), _react.default.Children.map(b, function (c) {
     return {
       key: c === null || c === void 0 ? void 0 : c.key,
-      props: c.props
+      props: c.props['data-grid']
     };
   }));
 }
