@@ -13,7 +13,7 @@ module.exports = {
         commons: {
           name: "commons",
           chunks: "all",
-          minChunks: 2
+          minChunks: 1
         }
       }
     }
@@ -22,7 +22,7 @@ module.exports = {
     path: __dirname + "/examples",
     filename: "[name].js",
     sourceMapFilename: "[file].map",
-    publicPath: "/examples/"
+    publicPath: "auto"
   },
   module: {
     rules: [
@@ -44,12 +44,13 @@ module.exports = {
   devServer: {
     compress: true,
     port: 4002,
-    open: "examples/0-showcase.html",
+    open: "/react-grid-layout/examples/0-showcase.html",
     client: {
       overlay: true
     },
     static: {
-      directory: "."
+      directory: ".",
+      publicPath: "/react-grid-layout"
     }
   },
   resolve: {
